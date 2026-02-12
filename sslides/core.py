@@ -31,6 +31,7 @@ from dialoghelper.core import find_msgs, curr_dialog, update_msg
 import inspect
 
 import html as html_module
+import time
 
 # %% ../nbs/00_slides.ipynb #f421f23a
 def get_slides_cells_from_dialog(include_prompts=False):
@@ -398,8 +399,12 @@ def sshow(theme='dark'):
     html_doc = generate_slides_html(groups, nb_cells, nb_attachments, theme_dict)
     html_content = to_xml(html_doc)
 
-    show(Iframe(srcdoc=html_content, width="100%", style="aspect-ratio: 16/9; max-width: 800px;"))
+    # Save to file
+    Path('sslides.html').write_text(html_content)
 
+    # Display from file content
+    show(Iframe(srcdoc=html_content, width="100%", style="aspect-ratio: 16/9; max-width: 800px;"))
+    time.sleep(0.5) 
     caller_globals = inspect.currentframe().f_back.f_globals
     update_msg(id=caller_globals['__msg_id'], skipped=1)
 
