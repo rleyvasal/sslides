@@ -352,7 +352,7 @@ def generate_slides_html(groups, nb_cells, nb_attachments, theme_dict):
     """
 
     # Load Tailwind from assets
-    tailwind_js = (Path(__file__).parent.parent/'assets'/'tailwind-browser.js').read_text()
+    tailwind_js = (Path(__file__).parent/'assets'/'tailwind-browser.js').read_text()
     
     nav_controls = Div(
         Button("<", id="prev-btn", cls="text-2xl cursor-pointer hover:text-gray-300"),
