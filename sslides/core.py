@@ -351,8 +351,8 @@ def generate_slides_html(groups, nb_cells, nb_attachments, theme_dict):
         })();
     """
 
-    # Load Tailwind from assets
-    tailwind_js = (Path(sslides.__file__).parent / 'assets' / 'tailwind-browser.js').read_text()
+    # Load Tailwind CDN
+    tailwind_cdn = Script(src="https://cdn.tailwindcss.com")
     
     nav_controls = Div(
         Button("<", id="prev-btn", cls="text-2xl cursor-pointer hover:text-gray-300"),
@@ -367,7 +367,7 @@ def generate_slides_html(groups, nb_cells, nb_attachments, theme_dict):
         Head(
             Meta(charset="utf-8"),
             Title("Presentation"),
-            Script(NotStr(tailwind_js)),
+            tailwind_cdn,
             Style(slide_css)
         ),
         Body(
