@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "sslides"
+  site-url: "https://rleyvasal.github.io/sslides"
+  description: "Create awsome Solveit slides"
+  repo-branch: main
+  repo-url: "https://github.com/rleyvasal/sslides"
