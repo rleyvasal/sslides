@@ -764,7 +764,7 @@ RuntimeWarning: Enable tracemalloc to get the object allocation traceback
 <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('[data-slide]');
-
+        
         function showSlide(n) {
             slides[currentSlide].classList.remove('active');
             slides[currentSlide].classList.add('hidden');
@@ -773,12 +773,12 @@ RuntimeWarning: Enable tracemalloc to get the object allocation traceback
             slides[currentSlide].classList.add('active');
             updateCounter();
         }
-
+        
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') showSlide(currentSlide + 1);
             if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
             if (e.key === 'f') document.documentElement.requestFullscreen();
-
+        
 
             if (e.key === 'ArrowDown') {
                 const active = document.querySelector('[data-slide].active');

@@ -405,16 +405,16 @@ def sshow(theme='dark'):
     # Display from file content
     # show(Iframe(srcdoc=html_content, width="100%", style="aspect-ratio: 16/9; max-width: 800px;"))
     # time.sleep(0.5) 
-    show(NotStr(f'''
-<div style="position:relative; aspect-ratio:16/9; max-width:800px;">
-  <div id="placeholder" style="position:absolute; inset:0; background:#111; color:#ccc;
-    display:flex; align-items:center; justify-content:center;">Loading…</div>
-  <iframe id="preview" srcdoc="{html.escape(html_content)}" 
-    style="width:100%; height:100%; border:0; opacity:0; transition:opacity .15s ease"
-    onload="this.style.opacity='1'; document.getElementById('placeholder').style.display='none';">
-  </iframe>
-</div>
-'''))
+    show(f'''
+    <div style="position:relative; aspect-ratio:16/9; max-width:800px;">
+    <div id="placeholder" style="position:absolute; inset:0; background:#111; color:#ccc; display:flex; align-items:center; justify-content:center;">Loading…</div>
+    <iframe id="preview" srcdoc="{html_module.escape(html_content)}" 
+        style="width:100%; height:100%; border:0; opacity:0; transition:opacity .15s ease"
+        onload="this.style.opacity='1'; document.getElementById('placeholder').style.display='none';"></iframe>
+    </div>
+    ''')
+    # show(to_xml(content))   
+   
     caller_globals = inspect.currentframe().f_back.f_globals
     update_msg(id=caller_globals['__msg_id'], skipped=1)
 
@@ -432,6 +432,7 @@ def ssave(output_path='presentation.html', theme='dark'):
     
     Path(output_path).write_text(html_content)
     print(f"Saved to {output_path} ({Path(output_path).stat().st_size / 1024:.1f} KB)")
+    time.sleep(0.5)
     caller_globals = inspect.currentframe().f_back.f_globals
     update_msg(id=caller_globals['__msg_id'], skipped=1)
     return output_path
