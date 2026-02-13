@@ -352,8 +352,12 @@ def generate_slides_html(groups, nb_cells, nb_attachments, theme_dict):
         })();
     """
 
-    # Load Tailwind CDN
-    tailwind_cdn = Script(src="https://cdn.tailwindcss.com")
+    try:
+        import sslides
+        tailwind_js = (Path(sslides.__file__).parent / 'assets' / 'tailwind-browser.js').read_text()
+    except:
+        # Fallback for local development
+        tailwind_js = (Path('../sslides/assets/tailwind-browser.js')).read_text()
     
     nav_controls = Div(
         Button("<", id="prev-btn", cls="text-2xl cursor-pointer hover:text-gray-300"),
@@ -367,8 +371,9 @@ def generate_slides_html(groups, nb_cells, nb_attachments, theme_dict):
     return Html(
         Head(
             Meta(charset="utf-8"),
+            Script(NotStr(tailwind_js)),
             Title("Presentation"),
-            tailwind_cdn,
+           
             Style(slide_css)
         ),
         Body(
@@ -405,8 +410,11 @@ def sshow(theme='dark'):
     # Display from file content
     # show(Iframe(srcdoc=html_content, width="100%", style="aspect-ratio: 16/9; max-width: 800px;"))
     # time.sleep(0.5) 
-    show(Iframe(srcdoc=html_content, width="100%", style="aspect-ratio: 16/9; max-width: 800px;"))
-    time.sleep(0.5)
+    show(Iframe(srcdoc=html_content, width="100%", 
+            style="aspect-ratio: 16/9; max-width: 800px; background: #111;"))
+
+    time.sleep(0.1)
+
 
     caller_globals = inspect.currentframe().f_back.f_globals
     update_msg(id=caller_globals['__msg_id'], skipped=1)
