@@ -16,5 +16,5 @@ d = { 'settings': { 'branch': 'main',
                               'sslides.core.load_notebook': ('slides.html#load_notebook', 'sslides/core.py'),
                               'sslides.core.parse_code_to_elements': ('slides.html#parse_code_to_elements', 'sslides/core.py'),
                               'sslides.core.parse_markdown_to_elements': ('slides.html#parse_markdown_to_elements', 'sslides/core.py'),
-                              'sslides.core.ssave': ('slides.html#ssave', 'sslides/core.py'),
-                              'sslides.core.sshow': ('slides.html#sshow', 'sslides/core.py')}}}
+                              'sslides.core.show': ('slides.html#show', 'sslides/core.py'),
+                              'sslides.core.ssave': ('slides.html#ssave', 'sslides/core.py')}}}

@@ -116,29 +116,30 @@
             <div data-type="output" id="el-output-_1cd63eae">
 <pre class="bg-gray-800 p-2 text-sm font-mono max-w-full text-gray-100 whitespace-pre-wrap break-words">/app/data/sslides/nbs
 </pre><pre class="bg-gray-800 p-2 text-sm font-mono max-w-full text-gray-100 whitespace-pre-wrap break-words">..:
-total 92
-drwxrwxr-x 10 solveit solveit  4096 Feb 12 04:28 .
-drwxrwxr-x 24 solveit solveit 20480 Feb 12 04:58 ..
-drwxrwxr-x  8 solveit solveit  4096 Feb 12 04:54 .git
+total 96
+drwxrwxr-x 11 solveit solveit  4096 Feb 13 00:47 .
+drwxrwxr-x 24 solveit solveit 20480 Feb 13 02:34 ..
+drwxrwxr-x  8 solveit solveit  4096 Feb 13 01:58 .git
 drwxrwxr-x  3 solveit solveit  4096 Jun 25  2025 .github
 -rw-rw-r--  1 solveit solveit  1615 Jun 25  2025 .gitignore
 -rw-rw-r--  1 solveit solveit 11337 Jun 25  2025 LICENSE
 -rw-rw-r--  1 solveit solveit   147 Feb 12 04:28 MANIFEST.in
--rw-rw-r--  1 solveit solveit  1298 Feb 11 19:48 README.md
+-rw-rw-r--  1 solveit solveit  3561 Feb 13 00:47 README.md
 drwxrwxr-x  4 solveit solveit  4096 Feb 11 20:04 _docs
-drwxrwxr-x  6 solveit solveit  4096 Feb 11 20:04 _proc
-drwxrwxr-x  2 solveit solveit  4096 Feb 12 04:28 dist
-drwxrwxr-x  3 solveit solveit  4096 Feb 12 05:37 nbs
--rw-rw-r--  1 solveit solveit   414 Feb 12 05:37 pyproject.toml
--rw-rw-r--  1 solveit solveit  1093 Feb 12 04:28 settings.ini
+drwxrwxr-x  5 solveit solveit  4096 Feb 13 00:47 _proc
+drwxrwxr-x  2 solveit solveit  4096 Feb 13 00:06 dist
+drwxrwxr-x  3 solveit solveit  4096 Feb 13 00:47 index_files
+drwxrwxr-x  3 solveit solveit  4096 Feb 13 02:35 nbs
+-rw-rw-r--  1 solveit solveit   414 Feb 13 02:35 pyproject.toml
+-rw-rw-r--  1 solveit solveit   950 Feb 12 23:41 settings.ini
 -rw-rw-r--  1 solveit solveit  2558 Feb 12 04:04 setup.py
-drwxrwxr-x  4 solveit solveit  4096 Feb 12 05:37 sslides
-drwxrwxr-x  2 solveit solveit  4096 Feb 12 04:28 sslides.egg-info
+drwxrwxr-x  4 solveit solveit  4096 Feb 13 02:35 sslides
+drwxrwxr-x  2 solveit solveit  4096 Feb 13 00:06 sslides.egg-info
 
 /app/data/sslides/sslides/assets:
 total 268
 drwxrwxr-x 2 solveit solveit   4096 Feb 11 19:57 .
-drwxrwxr-x 4 solveit solveit   4096 Feb 12 05:37 ..
+drwxrwxr-x 4 solveit solveit   4096 Feb 13 02:35 ..
 -rw-rw-r-- 1 solveit solveit 262709 Feb 12 04:03 tailwind-browser.js
 </pre>            </div>
             <div data-type="paragraph" id="el-0-_b8a2bb2b" class="text-5xl mb-6 leading-loose break-words"><p>i am ready to put it into a package i have the nbdev project but dont have create the repo can i create in  with gh repo create and then move the cntent there or how do we get the project there</p></div>
@@ -298,8 +299,8 @@ cp /app/data/sslides_old/sslides/sslides/assets/tailwind-browser.js ~/sslides/ss
 <li class="text-5xl mb-10 ml-2 list-disc text-gray-100 break-words">Commit and push</li>
 </ol></div>
             <div data-type="paragraph" id="el-4-_87c0f3f6" class="text-5xl mb-6 leading-loose break-words"><p>Want to start with step 1?</p></div>
-            <div data-type="code" id="el-code-_c6bf6c8a" class="mb-2"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><span style="color: #FF4689">from</span><span style="color: #F8F8F2"> sslides </span><span style="color: #FF4689">import</span> <span style="color: #F8F8F2">sshow</span>
-<span style="color: #F8F8F2">sshow()</span>
+            <div data-type="code" id="el-code-_f12c81f4" class="mb-2"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><span style="color: #FF4689">import</span><span style="color: #F8F8F2"> sslides</span>
+<span style="color: #F8F8F2">sslides</span><span style="color: #FF4689">.</span><span style="color: #F8F8F2">show()</span>
 </pre></div>
 </div>
           </div>
@@ -365,5 +366,5 @@ cp /app/data/sslides_old/sslides/sslides/assets/tailwind-browser.js ~/sslides/ss
         new ResizeObserver(rescale).observe(viewport);
         rescale();
         })();
-    </script>  </body>
+    </script><script>window.onload = () => window.parent.postMessage({type: 'slides_ready'}, '*');</script>  </body>
 </html>

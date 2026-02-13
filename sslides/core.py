@@ -5,7 +5,7 @@
 # %% auto #0
 __all__ = ['THEME_LIGHT', 'THEME_DARK', 'THEMES', 'foo', 'get_slides_cells_from_dialog', 'load_notebook',
            'get_slides_cells_from_notebook', 'group_dialog_cells_by_heading', 'parse_markdown_to_elements',
-           'parse_code_to_elements', 'create_slide_from_cells', 'generate_slides_html', 'sshow', 'ssave']
+           'parse_code_to_elements', 'create_slide_from_cells', 'generate_slides_html', 'show', 'ssave']
 
 # %% ../nbs/00_slides.ipynb #afc617c1
 def foo(): pass
@@ -388,12 +388,13 @@ def generate_slides_html(groups, nb_cells, nb_attachments, theme_dict):
             nav_controls,
             Script(nav_js),
             Script(scale_js),
+            Script("window.onload = () => window.parent.postMessage({type: 'slides_ready'}, '*');"),
             cls="m-0 bg-black overflow-hidden"
         )
     )
 
 # %% ../nbs/00_slides.ipynb #2ce50bb8
-def sshow(theme='dark'):
+def show(theme='dark'):
     dialog_slides_cells = get_slides_cells_from_dialog()
     nb_cells, nb_attachments = get_slides_cells_from_notebook(
         Path(curr_dialog()['name']).name + '.ipynb', dialog_slides_cells)
@@ -411,7 +412,9 @@ def sshow(theme='dark'):
     # show(Iframe(srcdoc=html_content, width="100%", style="aspect-ratio: 16/9; max-width: 800px;"))
     # time.sleep(0.5) 
     show(Iframe(srcdoc=html_content, width="100%", 
-            style="aspect-ratio: 16/9; max-width: 800px; background: #111;"))
+                style="aspect-ratio: 16/9; max-width: 800px; background: #111;",
+                onload="window.addEventListener('message', e => { if(e.data.type === 'slides_ready') { /* trigger skip */ } })"))
+
 
     time.sleep(1)
 
