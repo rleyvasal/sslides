@@ -413,7 +413,7 @@ def sshow(theme='dark'):
     show(Iframe(srcdoc=html_content, width="100%", 
             style="aspect-ratio: 16/9; max-width: 800px; background: #111;"))
 
-    time.sleep(0.1)
+    time.sleep(1)
 
 
     caller_globals = inspect.currentframe().f_back.f_globals
@@ -433,7 +433,7 @@ def ssave(output_path='presentation.html', theme='dark'):
     
     Path(output_path).write_text(html_content)
     print(f"Saved to {output_path} ({Path(output_path).stat().st_size / 1024:.1f} KB)")
-    time.sleep(0.5)
+    time.sleep(2)
     caller_globals = inspect.currentframe().f_back.f_globals
     update_msg(id=caller_globals['__msg_id'], skipped=1)
     return output_path
