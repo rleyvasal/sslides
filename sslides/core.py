@@ -5,7 +5,7 @@
 # %% auto #0
 __all__ = ['THEME_LIGHT', 'THEME_DARK', 'THEMES', 'foo', 'get_slides_cells_from_dialog', 'load_notebook',
            'get_slides_cells_from_notebook', 'group_dialog_cells_by_heading', 'parse_markdown_to_elements',
-           'parse_code_to_elements', 'create_slide_from_cells', 'generate_slides_html', 'show', 'ssave']
+           'parse_code_to_elements', 'create_slide_from_cells', 'generate_slides_html', 'sshow', 'ssave']
 
 # %% ../nbs/00_slides.ipynb #afc617c1
 def foo(): pass
@@ -394,7 +394,7 @@ def generate_slides_html(groups, nb_cells, nb_attachments, theme_dict):
     )
 
 # %% ../nbs/00_slides.ipynb #2ce50bb8
-def show(theme='dark'):
+def sshow(theme='dark'):
     dialog_slides_cells = get_slides_cells_from_dialog()
     nb_cells, nb_attachments = get_slides_cells_from_notebook(
         Path(curr_dialog()['name']).name + '.ipynb', dialog_slides_cells)
