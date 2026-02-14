@@ -46,8 +46,6 @@ content below heading is the slide content 5 run sslides
 # sshow()
 ```
 
-![pasted_image_8c24e280-b9a0-4447-9d9e-c332f38fb907.png](index_files/figure-commonmark/30cc6e59-1-8c24e280-b9a0-4447-9d9e-c332f38fb907.png)
-
 # Introducing sslides
 
 ## What is sslides
