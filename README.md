@@ -72,7 +72,8 @@ sshow()
 3.  `#` Creates a title slide
 4.  `##` Creates a regular slides - all Markdown and code cells become
     content of in slide
-5.  Run `show()`
+5.  Run
+    [`sshow()`](https://rleyvasal.github.io/sslides/slides.html#sshow)
 
 ## Navigate sslides
 
