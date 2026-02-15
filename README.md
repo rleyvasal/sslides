@@ -20,6 +20,11 @@ concepts - Turn conversation into shareable slides
 All this without typing all the content in a slides app e.g. Powerpoint
 or Google Slides
 
+## Get a standalone file for presenting offline
+
+- Click Show all files toggle where you ran the presentation
+- sslides.html file avalable for download
+
 ## Usage
 
 ### Installation
