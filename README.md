@@ -65,13 +65,12 @@ sshow()
     the slide content
 
 ``` python
-# 
-# #Making presentation from instructions
-# from sslides import sshow
+#Making presentation from instructions
+from sslides import sshow
 ```
 
 ``` python
-# sshow(theme='dark')
+sshow(theme='dark')
 ```
 
 Two themes included `light` and `dark` or you can use your own theme:
@@ -132,6 +131,8 @@ sshow(theme='dark')
   page number
 - `f` key enters fullscreen mode
 - `esc` key exits fullscreen
+- Code hidden in notes also hidden in slides press arrow next Code to
+  see code
 
 ## Content Suported
 
