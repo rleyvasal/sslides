@@ -152,3 +152,4 @@ checklink/cookies.txt
 .quarto
 *.html
 *.html
+00_slides_orig.ipynb
