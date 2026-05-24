@@ -1,11 +1,30 @@
 [build-system]
-requires = ["setuptools>=64.0"]
+requires = ["setuptools>=64"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name="sslides"
-requires-python=">=3.9"
-dynamic = [ "keywords", "description", "version", "dependencies", "optional-dependencies", "readme", "license", "authors", "classifiers", "entry-points", "scripts", "urls"]
+name = "sslides"
+dynamic = ["version"]
+description = "Create awsome Solveit slides"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "Apache-2.0"}
+authors = [{name = "Solveit", email = "nobody@fast.ai"}]
+keywords = ['nbdev', 'jupyter', 'notebook', 'python']
+classifiers = ["Natural Language :: English", "Intended Audience :: Developers", "Development Status :: 3 - Alpha", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3 :: Only"]
+dependencies = ['fastcore', 'python-fasthtml', 'mistletoe', 'pygments', 'latex2mathml', 'dialoghelper']
 
-[tool.uv]
-cache-keys = [{ file = "pyproject.toml" }, { file = "settings.ini" }, { file = "setup.py" }]
+[project.urls]
+Repository = "https://github.com/rleyvasal/sslides"
+Documentation = "https://rleyvasal.github.io/sslides"
+
+[project.entry-points.nbdev]
+sslides = "sslides._modidx:d"
+
+[tool.setuptools.dynamic]
+version = {attr = "sslides.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["sslides"]
+
+[tool.nbdev]
